@@ -1,17 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import {  Component, OnInit ,Input, Output,EventEmitter} from '@angular/core';
 
 @Component({
-  selector: 'app-adding',
+  selector: 'adding',
   templateUrl: './adding.component.html',
   styleUrls: ['./adding.component.css']
 })
 export class AddingComponent implements OnInit {
 
-  constructor() { }
+@Input() studNo1;
+ @Input() studFName1;
+ @Input() studLName1;
+ @Input() studProg1;
+ @Input() studYear1;
+ @Output() messages1 = new EventEmitter<string>();
+@Output() studRecord = new EventEmitter<object>();
 
-  ngOnInit() {
-  }
-  
+
   studentCollection: Array<object> = [];
   studentRecord: object;
 
@@ -60,7 +64,7 @@ export class AddingComponent implements OnInit {
           }
             else{
               this.messages = 'Errors have been encountered and therefore cannot continue to process requested operation.';
-              return false;
+              return true;
             }
   }
  clearValues(): void {
@@ -69,5 +73,10 @@ export class AddingComponent implements OnInit {
   this.studLName = null;
   this.studProg = null;
   this.studYear = null;
+  }
+
+    constructor() { }
+
+  ngOnInit() {
   }
 }

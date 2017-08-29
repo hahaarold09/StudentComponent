@@ -5,3 +5,16 @@
   <label>Student Program</label> <input type="text" [(ngModel)]="studProg"><br>
   <label>Student Year</label> <input type="text" [(ngModel)]="studYear"><br>
 </div>
+
+<div>
+  <adding [studNo1] = studNo
+           [studFName1] = studFName
+           [studLName1] = studLName
+           [studProg1] = studProg
+           [studYear1] = studYear 
+           (messages1) = messages($event)
+           (studRecord) = studentRecord($event)> </adding>
+           
+  <printing ></printing>
+  
+</div>

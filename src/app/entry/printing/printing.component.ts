@@ -1,21 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import {  Component, OnInit ,Input, Output,EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-printing',
+  selector: 'printing',
   templateUrl: './printing.component.html',
   styleUrls: ['./printing.component.css']
 })
 export class PrintingComponent implements OnInit {
 
-  received = false;
+  print = false;
 
   constructor() { }
-
   ngOnInit() {
   }
-  printing(){
-     this.received = true;
+  listStudent(): void{
+     this.print = true;
   console.log('Showing stired students');
+  
   }
+
+
+
+  
 
 }
